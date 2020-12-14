@@ -6,10 +6,10 @@ import { Snake } from "../entities/snake";
 import { Renderer } from "../interfaces/renderer";
 
 export class Canvas implements Renderer {
-  private readonly pointDOM;
-  private readonly bestDOM;
-  private readonly canvas;
-  private readonly ctx;
+  private readonly pointDOM: HTMLElement;
+  private readonly bestDOM: HTMLElement;
+  private readonly canvas: HTMLCanvasElement;
+  private readonly ctx: CanvasRenderingContext2D;
   private readonly chunk: number;
 
   constructor(width: number) {
