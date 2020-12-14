@@ -7,7 +7,7 @@ const fs = require("fs");
     console.log("Building...");
     await execa("npm", ["run", "build"]);
     // Understand if it's dist or build folder
-    const folderName = fs.existsSync("build") ? "build" : "build";
+    const folderName = fs.existsSync("build") ? "dist" : "build";
     fs.copyFileSync('./assets/index.html', './build/index.html');
     fs.copyFileSync('./assets/index.css', './build/index.css');
     await execa("git", ["--work-tree", folderName, "add", "--all"]);
