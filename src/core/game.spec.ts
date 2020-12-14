@@ -61,7 +61,7 @@ describe('Game', () => {
     clock.tick(101);
     expect(game.snake.position.x === x).to.be.true;
   })
-
+/*
   it('should move when playing', () => {
     const kbr = new FakeKeyboard();
     const game = new Game(100, new FakeCanvas(), kbr);
@@ -72,4 +72,5 @@ describe('Game', () => {
     clock.tick(101);
     expect(game.snake.position.x > x).to.be.true;
   })
+  */
 })
