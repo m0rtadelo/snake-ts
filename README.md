@@ -1,3 +1,9 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=alert_status)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=security_rating)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
+
 # Snake
 
 A classic Snake game in Typescript. Use the arrow keys of the keyboard to move the snake and get all the fruits. Caution with your body and the limits of the game terrain!
