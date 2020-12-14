@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/**/*.spec.ts'",
-    "coverage": "nyc env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/**/*.spec.ts'",
+    "coverage": "nyc --reporter=lcov --reporter=text env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'src/**/*.spec.ts'",
     "build": "webpack",
     "watch": "webpack --watch"
   },
