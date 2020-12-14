@@ -1,3 +1,4 @@
+![Build](https://github.com/m0rtadelo/snake-ts/workflows/Build/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=alert_status)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=coverage)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=m0rtadelo_snake-ts&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=m0rtadelo_snake-ts)
