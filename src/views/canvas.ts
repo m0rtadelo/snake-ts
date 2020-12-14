@@ -6,12 +6,28 @@ import { Snake } from "../entities/snake";
 import { Renderer } from "../interfaces/renderer";
 
 export class Canvas implements Renderer {
-  private readonly pointDOM = document.getElementById('points');
-  private readonly bestDOM = document.getElementById('best');
-  private readonly canvas = (document.getElementById('canvas') as HTMLCanvasElement);
-  private readonly ctx = this.canvas.getContext('2d');
-  private readonly chunk = this.canvas.width / WIDTH;
+  private readonly pointDOM;
+  private readonly bestDOM;
+  private readonly canvas;
+  private readonly ctx;
+  private readonly chunk: number;
 
+  constructor() {
+    document.getElementById('game').innerHTML = `    <div class="holder">
+    <span class="text-left">Points: <span id="points"></span></span>
+    <span class="title">Snake</span>
+    <span class="text-right">Best: <span id="best"></span></span>
+    <canvas id="canvas" width="960px" height="540px"></canvas>
+    <span id="paused" class="hidden">GAME PAUSED<br>press ESC key to continue</span>
+    <span id="menu" class="hidden">Press ENTER to start a new game</span>
+  </div>
+`
+    this.pointDOM = document.getElementById('points');
+    this.bestDOM = document.getElementById('best');
+    this.canvas = (document.getElementById('canvas') as HTMLCanvasElement);
+    this.ctx = this.canvas.getContext('2d');
+    this.chunk = this.canvas.width / WIDTH;
+  }
   render(game: Game): void {
     document.getElementById('paused').className = game._status === Status.paused ? 'paused' : 'hidden'
     document.getElementById('menu').className = game._status === Status.menu ? 'paused' : 'hidden'
