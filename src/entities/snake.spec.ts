@@ -6,7 +6,7 @@ import { Snake } from './snake';
 const size = 3;
 
 describe('Snake', () => {
-  const snake = new Snake(size);
+  const snake = new Snake(size, {width: 64, height: 36});
 
   it('should load correctly', () => {
     expect(snake).to.not.be.undefined;
@@ -37,7 +37,7 @@ describe('Snake', () => {
 
   it('should increase size if eat fruit', () => {
     expect(snake.body.length === size).to.be.true;
-    snake.eat(new Fruit());
+    snake.eat(new Fruit({width: 64, height: 36}));
     snake.move();
     expect(snake.body.length === size + 1).to.be.true;
   })

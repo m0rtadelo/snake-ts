@@ -4,6 +4,7 @@ import { Snake } from '../entities/snake';
 import { Fruit } from '../entities/fruit';
 import { InputMethod } from '../interfaces/controller';
 import { Movement } from '../constants/keyboard';
+import { Options } from '../interfaces/options';
 
 export class Game {
   _status: Status;
@@ -13,13 +14,13 @@ export class Game {
   fruit: Fruit;
   private readonly render: Renderer;
 
-  constructor(speed: number, render: Renderer, input?: InputMethod) {
+  constructor(options: Options, render: Renderer, input?: InputMethod) {
     this._status = Status.menu;
     this.best = -1;
-    this.speed = speed;
+    this.speed = options.speed;
     this.render = render;
-    this.snake = new Snake(25);
-    this.fruit = new Fruit();
+    this.snake = new Snake(25, options);
+    this.fruit = new Fruit(options);
     this.setInput(input);
   }
 

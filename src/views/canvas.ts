@@ -1,5 +1,5 @@
 import { COLOR } from "../constants/color";
-import { Status, WIDTH } from "../constants/game";
+import { Status } from "../constants/game";
 import { Fruit } from "../entities/fruit";
 import { Game } from "../core/game";
 import { Snake } from "../entities/snake";
@@ -12,7 +12,7 @@ export class Canvas implements Renderer {
   private readonly ctx;
   private readonly chunk: number;
 
-  constructor() {
+  constructor(width: number) {
     document.getElementById('game').innerHTML = `    <div class="holder">
     <span class="text-left">Points: <span id="points"></span></span>
     <span class="title">Snake</span>
@@ -26,7 +26,7 @@ export class Canvas implements Renderer {
     this.bestDOM = document.getElementById('best');
     this.canvas = (document.getElementById('canvas') as HTMLCanvasElement);
     this.ctx = this.canvas.getContext('2d');
-    this.chunk = this.canvas.width / WIDTH;
+    this.chunk = this.canvas.width / width;
   }
   render(game: Game): void {
     document.getElementById('paused').className = game._status === Status.paused ? 'paused' : 'hidden'

@@ -3,7 +3,7 @@ import { Fruit } from "./fruit";
 import { Point } from "../utils/point";
 
 describe('Fruit', () => {
-  const fruit = new Fruit();
+  const fruit = new Fruit({width: 64, height: 36});
 
   it('should load', () => {
     expect(fruit).to.not.be.undefined;

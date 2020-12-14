@@ -1,7 +1,8 @@
 import { Point } from '../utils/point';
 import { Movement } from '../constants/keyboard';
-import { HEIGHT, WIDTH } from '../constants/game';
+// import { HEIGHT, WIDTH } from '../constants/game';
 import { Fruit } from './fruit';
+import { Size } from '../interfaces/size';
 
 export class Snake {
   position: Point;
@@ -9,8 +10,12 @@ export class Snake {
   points = 0;
   movement: Movement;
   private size = 0;
+  private w: number;
+  private h: number;
 
-  constructor(size: number) {
+  constructor(size: number, options: Size) {
+    this.w = options.width;
+    this.h = options.height;
     this.reset(size);
   }
 
@@ -19,7 +24,7 @@ export class Snake {
   }
 
   reset(size: number): void {
-    this.position = new Point(WIDTH / 2, HEIGHT / 2);
+    this.position = new Point(this.w / 2, this.h / 2);
     this.movement = Movement.Right;
     this.body = new Array();
     this.size = size;
@@ -38,7 +43,7 @@ export class Snake {
 
   isDead(): boolean {
     for(let i = 0; i < this.body.length - 1; i++) {
-      if(this.head.in(this.body[i]) || this.head.x < 0 || this.head.x >= WIDTH || this.head.y < 0 || this.head.y >= HEIGHT) {
+      if(this.head.in(this.body[i]) || this.head.x < 0 || this.head.x >= this.w || this.head.y < 0 || this.head.y >= this.h) {
         return true;
       }
     }

@@ -49,12 +49,12 @@ describe('Game', () => {
   });
 
   it('should load', () => {
-    const game = new Game(100, new FakeCanvas());
+    const game = new Game({speed:100, width: 64, height: 36}, new FakeCanvas());
     expect(game).to.not.be.undefined;
   })
 
   it('should not move in menu', () => {
-    const game = new Game(100, new FakeCanvas());
+    const game = new Game({speed:100, width: 64, height: 36}, new FakeCanvas());
     game.start();
     clock.tick(101);
     const x = game.snake.position.x;
